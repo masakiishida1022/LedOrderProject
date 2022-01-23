@@ -15,5 +15,13 @@
   "dependencies": {
     "moment": "^2.29.1",
     "netlify-lambda": "^2.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masakiishida1022/LedOrderProject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/masakiishida1022/LedOrderProject/issues"
+  },
+  "homepage": "https://github.com/masakiishida1022/LedOrderProject#readme"
 }
