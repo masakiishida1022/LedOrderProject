@@ -6,6 +6,7 @@ const headers = {
 
 exports.handler = function (event, context, callback) {
   //callback(null, { statusCode: 200, headers, body: "hello, masaki" });
-  const body = JSON.parse(event.body);
+  //const body = JSON.parse(event.body);
+  const body = "masaki ishida";
   callback(null, { statusCode: 200, headers, body: JSON.stringify(body) });
 };
