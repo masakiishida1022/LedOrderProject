@@ -2,19 +2,39 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>LEDオーダー</title>
+    <title>入力</title>
     <link rel="stylesheet" href="sample.css" />
   </head>
   <body>
-    <p class="title">LED 注文</p>
+    <p class="title">入力</p>
     <div id="area1">
-      <input type="text" id="tBox" class="font-main" />
+      <input id="file1" type="file" onChange="fileChanged(this)" multiple />
+      <br />
+      <input type="text" id="tBox" style="width: 600px; height: 50px"
+      class="font-main" value=""5" : "" />
+      <script>
+        function fileChanged(input) {
+          var reader = new FileReader();
+          reader.readAsText(input.files[0]);
+          reader.onload = function (ev) {
+            $("#tBox").val(reader.result);
+          };
+        }
+      </script>
+      <br />
       <br />
       <button type="button" id="btn1">注文</button>
       <br />
-      <input type="text" id="tBox" class="font-main" />
+      <br />
     </div>
-    //
+    <div id="area2">
+      <input
+        type="text"
+        id="ttBox"
+        style="width: 600px; height: 50px"
+        class="font-main"
+      />
+    </div>
 
     <script
       type="text/javascript"

@@ -5,8 +5,8 @@ $("#btn1").on("click", function () {
   axios
     //.get("http://localhost:9000/hello")
     .get("/.netlify/functions/hello")
-    .then((response) => console.log("response body:", response.data));
-  //.then((response) => $("#tBox").val(response.data));
+    //.then((response) => console.log("response body:", response.data));
+    .then((response) => $("#tBox").val(response.data));
   let date = new Date();
   let year = date.getFullYear();
   let month = date.getMonth() + 1;
