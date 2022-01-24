@@ -2,9 +2,10 @@
 //import axios from "axios";
 
 $("#btn1").on("click", function () {
+  const text = document.getElementById("tBox").value;
   axios
     //.get("http://localhost:9000/hello")
-    .get("/.netlify/functions/hello", $("#tBox").val)
+    .get("/.netlify/functions/hello", text)
     //.then((response) => console.log("response body:", response.data));
     .then((response) => $("#outputBox").val(response.data));
 });
