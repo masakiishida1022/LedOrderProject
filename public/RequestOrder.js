@@ -3,6 +3,7 @@
 
 $("#btn1").on("click", function () {
   const text = document.getElementById("tBox").value;
+  console.log(text);
   axios
     .post("/.netlify/functions/hello", JSON.parse(text))
     //.then((response) => console.log("response body:", response.data));
