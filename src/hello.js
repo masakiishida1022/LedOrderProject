@@ -8,6 +8,7 @@ exports.handler = function (event, context, callback) {
   //callback(null, { statusCode: 200, headers, body: "hello, masaki" });
   const body = JSON.parse(event.body);
   console.log(body);
-  const reply = JSON.stringify(body);
+  const obj = { name: "John", age: 30, city: "New York" };
+  const reply = JSON.stringify(obj);
   callback(null, { statusCode: 200, headers, body: reply });
 };
