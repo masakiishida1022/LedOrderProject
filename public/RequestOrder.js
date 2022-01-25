@@ -8,4 +8,6 @@ $("#btn1").on("click", function () {
     .post("/.netlify/functions/hello", JSON.parse(text))
     //.then((response) => console.log("response body:", response.data));
     .then((response) => $("#outputBox").val(response.data));
+  console.log(response);
+  console.log(JSON.stringify(reponse));
 });
