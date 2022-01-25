@@ -9,5 +9,5 @@ $("#btn1").on("click", function () {
     //.then((response) => console.log("response body:", response.data));
     .then((response) => $("#outputBox").val(response.data));
   console.log(response);
-  console.log(JSON.stringify(reponse));
+  console.log(JSON.stringify(reponse.data));
 });
