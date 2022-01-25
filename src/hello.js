@@ -16,5 +16,6 @@ exports.handler = function (event, context, callback) {
     },
   };
   const reply = JSON.stringify(jsn);
-  callback(null, { statusCode: 200, headers, body: reply });
+  const reply2 = event.body;
+  callback(null, { statusCode: 200, headers, body: reply2 });
 };

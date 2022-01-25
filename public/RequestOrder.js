@@ -5,7 +5,7 @@ $("#btn1").on("click", function () {
   const text = document.getElementById("tBox").value;
   console.log(text);
   axios
-    .post("/.netlify/functions/hello", JSON.parse(text))
+    .post("/.netlify/functions/hello", text)
     //.then((response) => console.log("response body:", response.data));
     .then((response) => $("#outputBox").val(JSON.stringify(response.data)));
   //console.log(response);
