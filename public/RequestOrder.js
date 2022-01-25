@@ -7,7 +7,6 @@ $("#btn1").on("click", function () {
   axios
     .post("/.netlify/functions/hello", JSON.parse(text))
     //.then((response) => console.log("response body:", response.data));
-    .then((response) => $("#outputBox").val(response.data));
+    .then((response) => $("#outputBox").val(JSON.stringify(response.data)));
   //console.log(response);
-  console.log(JSON.stringify(response.data));
 });
