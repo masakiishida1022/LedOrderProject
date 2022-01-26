@@ -7,15 +7,21 @@ const headers = {
 exports.handler = function (event, context, callback) {
   //callback(null, { statusCode: 200, headers, body: "hello, masaki" });
   const body = JSON.parse(event.body);
-  console.log(body);
-  jsn = {
-    data: {
-      a: "abc",
-      b: "あいう",
-      c: 123,
-    },
-  };
-  const reply = JSON.stringify(jsn);
-  const reply2 = event.body;
-  callback(null, { statusCode: 200, headers, body: reply2 });
+
+  const initOrderList = [
+    { patternNo: 1, num: 0 },
+    { patternNo: 2, num: 0 },
+    { patternNo: 3, num: 0 },
+    { patternNo: 4, num: 0 },
+    { patternNo: 5, num: 0 },
+    { patternNo: 6, num: 0 },
+  ];
+
+  const reply = initOrderList.map((order, index, array) => {
+    return index < body.length
+      ? { patternNo: index, num: body[index].num }
+      : { patternNo: index, num: 0 };
+  });
+
+  callback(null, { statusCode: 200, headers, body: JSON.stringify(reply) });
 };
