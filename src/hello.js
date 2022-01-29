@@ -9,14 +9,14 @@ exports.handler = function (event, context, callback) {
   const body = JSON.parse(event.body);
 
   const reply = { ...body };
-  reply.length = 100;
+  /*reply.length = 100;
   reply.forEach((element, i) => {
     if (i < body.length) {
       reply[i] = body[i];
     } else {
       reply[i] = "0";
     }
-  });
+  });*/
 
   //const cpyBody = [...body];
 
