@@ -8,15 +8,15 @@ exports.handler = function (event, context, callback) {
   //callback(null, { statusCode: 200, headers, body: "hello, masaki" });
   const body = JSON.parse(event.body);
 
-  const reply = {};
-  reply.length = 100;
+  const reply = { ...body };
+  /*reply.length = 100;
   reply.forEach((element, i) => {
     if (i < body.length) {
-      reply[String(i)] = body[String(i)];
+      reply[i] = body[i];
     } else {
-      reply[String(i)] = "0";
+      reply[i] = "0";
     }
-  });
+  });*/
 
   //const cpyBody = [...body];
 
