@@ -8,20 +8,24 @@ exports.handler = function (event, context, callback) {
   //callback(null, { statusCode: 200, headers, body: "hello, masaki" });
   const body = JSON.parse(event.body);
 
-  const initOrderList = [
+  /*const initOrderList = [
     { patternNo: 1, num: 0 },
     { patternNo: 2, num: 0 },
     { patternNo: 3, num: 0 },
     { patternNo: 4, num: 0 },
     { patternNo: 5, num: 0 },
     { patternNo: 6, num: 0 },
-  ];
+  ];*/
 
-  const reply = initOrderList.map((order, index, array) => {
+  const reply = body.map((order, i) => {
+    body[i] * 2;
+  });
+
+  /*const reply = initOrderList.map((order, index, array) => {
     return index < body.length
       ? { patternNo: index, num: body[index].num }
       : { patternNo: index, num: 0 };
-  });
+  });*/
 
   callback(null, { statusCode: 200, headers, body: JSON.stringify(reply) });
 };
