@@ -14,7 +14,7 @@ exports.handler = function (event, context, callback) {
     if (i < body.length) {
       reply[i] = body[i];
     } else {
-      reply[i] = 0;
+      reply[i] = body[0];
     }
   });
 
