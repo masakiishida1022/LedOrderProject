@@ -5,6 +5,9 @@ $("#btn1").on("click", function () {
   var data = {};
   var table = document.getElementById("OrderTable");
   var order = getRequestOrder(table);
+
+  var resultTable = document.getElementById("resultTable");
+
   console.log(order);
   console.log(JSON.stringify(order));
   var parsedData = JSON.parse(JSON.stringify(order));
@@ -13,6 +16,6 @@ $("#btn1").on("click", function () {
   axios
     .post("/.netlify/functions/hello", JSON.stringify(order))
     //.then((response) => console.log("response body:", response.data));
-    .then((response) => $("#outputBox").val(JSON.stringify(response.data)));
+    .then((response) => setRequestOrder(resultTable, response.data));
   //console.log(response);
 });
