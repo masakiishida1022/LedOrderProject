@@ -6,8 +6,8 @@ const headers = {
 
 exports.handler = function (event, context, callback) {
   //callback(null, { statusCode: 200, headers, body: "hello, masaki" });
-  const body = JSON.parse(event.body);
-  console.log(body);
+  //const body = JSON.parse(event.body);
+  //console.log(body);
 
   /*const initOrderList = [
     { patternNo: 1, num: 0 },
@@ -28,5 +28,5 @@ exports.handler = function (event, context, callback) {
       : { patternNo: index, num: 0 };
   });*/
 
-  callback(null, { statusCode: 200, headers, body: JSON.stringify(body) });
+  callback(null, { statusCode: 200, headers, body: event.body });
 };
