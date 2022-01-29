@@ -2,10 +2,16 @@
 //import axios from "axios";
 
 $("#btn1").on("click", function () {
-  const text = document.getElementById("tBox").value;
-  console.log(text);
+  var data = {};
+  var table = document.getElementById("OrderTable");
+  var order = getRequestOrder(table);
+  console.log(order);
+  console.log(JSON.stringify(order));
+  var parsedData = JSON.parse(JSON.stringify(order));
+  console.log(parsedData);
+  console.log(JSON.stringify(parsedData));
   axios
-    .post("/.netlify/functions/hello", text)
+    .post("/.netlify/functions/hello", JSON.stringify(order))
     //.then((response) => console.log("response body:", response.data));
     .then((response) => $("#outputBox").val(JSON.stringify(response.data)));
   //console.log(response);

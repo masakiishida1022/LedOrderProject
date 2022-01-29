@@ -5,13 +5,13 @@
     <title>入力</title>
     <link rel="stylesheet" href="sample.css" />
   </head>
-  <body>
-    <p class="title">入力</p>
-    <div id="area1">
+  <body id="body">
+    <div id="orderTableArea">
       <input id="file1" type="file" onChange="fileChanged(this)" multiple />
       <br />
-      <input type="text" id="tBox" style="width: 600px; height: 50px"
-      class="font-main" value=""5" : "" />
+      
+     <!-- <input type="text" id="tBox" style="width: 600px; height: 50px"
+      class="font-main" value=""5" : "" />-->
       <script>
         function fileChanged(input) {
           var reader = new FileReader();
@@ -21,26 +21,39 @@
           };
         }
       </script>
-      <br />
-      <br />
-      <button type="button" id="btn1">注文</button>
-      <br />
-      <br />
     </div>
-    <div id="area2">
+    <br />
+    <br />
+    <div id="execOrderArea" style="text-align: right;"></div>
+      <button type="button" style="width: 20%; padding: 20px;" id="btn1">注文</button>
+    </div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+    <div id="resultArea">
+      
+<!--
       <input
         type="text"
         id="outputBox"
         style="width: 600px; height: 50px"
         class="font-main"
-      />
+      />-->
     </div>
+  
 
     <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-3.4.1.min.js"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="RequestOrder.js"></script>
+    <script src="Table.js"></script>
+    <script src="OrderTable.js"></script>
+    <script src="ResultTable.js"></script>
+    
+    <script src="RequestOrder.js"></script>
   </body>
 </html>
