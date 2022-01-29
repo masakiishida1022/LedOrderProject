@@ -8,7 +8,7 @@ exports.handler = function (event, context, callback) {
   //callback(null, { statusCode: 200, headers, body: "hello, masaki" });
   const body = JSON.parse(event.body);
 
-  const reply = [...body];
+  const reply = { ...body };
   /*reply.length = 100;
   reply.forEach((element, i) => {
     if (i < body.length) {
