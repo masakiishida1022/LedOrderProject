@@ -34,5 +34,5 @@ exports.handler = function (event, context, callback) {
       : { patternNo: index, num: 0 };
   });*/
 
-  callback(null, { statusCode: 200, headers, body: JSON.stringify(cpyBody) });
+  callback(null, { statusCode: 200, headers, body: JSON.stringify(body) });
 };
