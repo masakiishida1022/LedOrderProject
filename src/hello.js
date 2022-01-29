@@ -18,9 +18,9 @@ exports.handler = function (event, context, callback) {
     { patternNo: 6, num: 0 },
   ];*/
 
-  const reply = body.map((order, i) => {
+  /*const reply = body.map((order, i) => {
     return body[i] * 2;
-  });
+  });*/
 
   /*const reply = initOrderList.map((order, index, array) => {
     return index < body.length
@@ -28,5 +28,5 @@ exports.handler = function (event, context, callback) {
       : { patternNo: index, num: 0 };
   });*/
 
-  callback(null, { statusCode: 200, headers, body: JSON.stringify(reply) });
+  callback(null, { statusCode: 200, headers, body: JSON.stringify(body) });
 };
