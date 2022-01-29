@@ -3,7 +3,7 @@ let ResultTableProperty = {
   width: "60" + "px",
   tableId: "resultTable",
   numSize: 21,
-  numSizeInRaws: 3,
+  numSizeInRaws: 7,
   parentElem: "resultArea",
   editable: true,
   heading1: "パターン",
