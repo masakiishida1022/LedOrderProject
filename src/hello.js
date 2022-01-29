@@ -6,7 +6,13 @@ const headers = {
 
 exports.handler = function (event, context, callback) {
   //callback(null, { statusCode: 200, headers, body: "hello, masaki" });
-  //const body = JSON.parse(event.body);
+  const body = JSON.parse(event.body);
+
+  const emptyArray = [];
+  emptyArray.length = 100;
+
+  const cpyBody = [...body, ...emptyArray];
+
   //console.log(body);
 
   /*const initOrderList = [
@@ -28,5 +34,5 @@ exports.handler = function (event, context, callback) {
       : { patternNo: index, num: 0 };
   });*/
 
-  callback(null, { statusCode: 200, headers, body: event.body });
+  callback(null, { statusCode: 200, headers, body: JSON.stringify(cpyBody) });
 };
