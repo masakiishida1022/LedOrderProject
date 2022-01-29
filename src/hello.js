@@ -5,7 +5,7 @@ const headers = {
 };
 
 exports.handler = function (event, context, callback) {
-  callback(null, { statusCode: 200, headers, body: "hello, masaki" });
+  //callback(null, { statusCode: 200, headers, body: "hello, masaki" });
   const body = JSON.parse(event.body);
   console.log(body);
 
@@ -19,7 +19,7 @@ exports.handler = function (event, context, callback) {
   ];*/
 
   const reply = body.map((order, i) => {
-    body[i] * 2;
+    return body[i] * 2;
   });
 
   /*const reply = initOrderList.map((order, index, array) => {
