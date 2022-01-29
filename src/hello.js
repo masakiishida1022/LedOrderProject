@@ -11,7 +11,7 @@ exports.handler = function (event, context, callback) {
   const emptyArray = [];
   emptyArray.length = 100;
 
-  const cpyBody = [...body, ...emptyArray];
+  const cpyBody = [...body];
 
   //console.log(body);
 
