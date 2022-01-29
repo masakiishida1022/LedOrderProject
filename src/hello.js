@@ -8,10 +8,17 @@ exports.handler = function (event, context, callback) {
   //callback(null, { statusCode: 200, headers, body: "hello, masaki" });
   const body = JSON.parse(event.body);
 
-  const emptyArray = [];
-  emptyArray.length = 100;
+  const reply = [];
+  reply.length = 100;
+  reply.forEach((element, i) => {
+    if (i < body.length) {
+      reply[i] = body[i];
+    } else {
+      reply[i] = 0;
+    }
+  });
 
-  const cpyBody = [...body];
+  //const cpyBody = [...body];
 
   //console.log(body);
 
@@ -34,5 +41,5 @@ exports.handler = function (event, context, callback) {
       : { patternNo: index, num: 0 };
   });*/
 
-  callback(null, { statusCode: 200, headers, body: JSON.stringify(body) });
+  callback(null, { statusCode: 200, headers, body: JSON.stringify(reply) });
 };
