@@ -11,8 +11,8 @@ exports.handler = function (event, context, callback) {
   const reply = { ...body };
   const replyArray = Array(100)
     .fill()
-    .map((val, i) => {
-      i: "0";
+    .map(() => {
+      "0";
     });
 
   /*reply.length = 100;
