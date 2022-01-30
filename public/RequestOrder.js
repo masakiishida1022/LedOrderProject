@@ -8,11 +8,6 @@ $("#btn1").on("click", function () {
 
   var resultTable = document.getElementById("resultTable");
 
-  console.log(order);
-  console.log(JSON.stringify(order));
-  var parsedData = JSON.parse(JSON.stringify(order));
-  console.log(parsedData);
-  console.log(JSON.stringify(parsedData));
   axios
     .post("/.netlify/functions/lambdaFuncGetPattern", JSON.stringify(order))
     //.then((response) => console.log("response body:", response.data));
