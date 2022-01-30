@@ -9,11 +9,7 @@ exports.handler = function (event, context, callback) {
   const body = JSON.parse(event.body);
 
   const reply = { ...body };
-  const replyArray = Array(100)
-    .fill()
-    .map(() => {
-      "0";
-    });
+  const replyArray = [...Array(100)].map((_, i) => "0");
 
   /*reply.length = 100;
   reply.forEach((element, i) => {
@@ -50,6 +46,6 @@ exports.handler = function (event, context, callback) {
   callback(null, {
     statusCode: 200,
     headers,
-    body: JSON.stringify(reply),
+    body: JSON.stringify(replyArray),
   });
 };
