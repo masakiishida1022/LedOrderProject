@@ -14,7 +14,7 @@ $("#btn1").on("click", function () {
   console.log(parsedData);
   console.log(JSON.stringify(parsedData));
   axios
-    .post("/.netlify/functions/hello", JSON.stringify(order))
+    .post("/.netlify/functions/lambdaFuncGetPattern", JSON.stringify(order))
     //.then((response) => console.log("response body:", response.data));
     .then((response) => setRequestOrder(resultTable, response.data));
   //console.log(response);
