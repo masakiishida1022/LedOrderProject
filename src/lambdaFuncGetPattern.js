@@ -8,8 +8,8 @@ exports.handler = function (event, context, callback) {
   //callback(null, { statusCode: 200, headers, body: "hello, masaki" });
   const body = JSON.parse(event.body);
 
-  const reply = { ...body };
-  const replyArray = [...Array(100)].map((_, i) => "0");
+  const zeroArray = [...Array(100)].map((_, i) => "0");
+  const reply = { ...body, ...zeroArray };
 
   /*reply.length = 100;
   reply.forEach((element, i) => {
