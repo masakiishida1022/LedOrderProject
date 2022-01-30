@@ -9,6 +9,12 @@ exports.handler = function (event, context, callback) {
   const body = JSON.parse(event.body);
 
   const reply = { ...body };
+  const replyArray = Array(100)
+    .fill()
+    .map((val, i) => {
+      i: "0";
+    });
+
   /*reply.length = 100;
   reply.forEach((element, i) => {
     if (i < body.length) {
@@ -41,5 +47,9 @@ exports.handler = function (event, context, callback) {
       : { patternNo: index, num: 0 };
   });*/
 
-  callback(null, { statusCode: 200, headers, body: JSON.stringify(reply) });
+  callback(null, {
+    statusCode: 200,
+    headers,
+    body: JSON.stringify(replyArray),
+  });
 };
