@@ -9,7 +9,7 @@ exports.handler = function (event, context, callback) {
   const body = JSON.parse(event.body);
 
   const zeroArray = [...Array(100)].map((_, i) => "0");
-  const reply = { ...body, ...zeroArray };
+  const reply = { ...body };
 
   /*reply.length = 100;
   reply.forEach((element, i) => {
